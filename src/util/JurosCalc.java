@@ -7,6 +7,7 @@ package util;
 
 import java.time.LocalDate;
 import java.util.Date;
+import static util.Format.decimal;
 
 /**
  *
@@ -28,7 +29,7 @@ public class JurosCalc {
             // juro é igual ao valor, vezes a taxa sobre 100 (para obter a porcentagem) sobre 30 (para a porcentagem ser cobrada de forma diária)
             // vezes a diferença de dias entre hoje e a data de vencimento
             
-            return juros; // retorna o juro
+            return decimal(juros); // utiliza a classe format para retornar apenas dois decimais
         }
     }
 }
