@@ -21,6 +21,7 @@ import javax.swing.table.DefaultTableModel;
 import model.Cliente;
 import model.Venda;
 import util.DateConvert;
+import util.Format;
 import util.JurosCalc;
 
 /**
@@ -225,7 +226,7 @@ public class VendaDAO {
                     i=i+(rs.getDouble(1)-rs.getDouble(2));
                 }
             }
-            return i;
+            return Format.decimal(i);
         } catch (SQLException ex) {
             ex.printStackTrace();
             return 0;
@@ -242,7 +243,7 @@ public class VendaDAO {
             while (rs.next()) {
                 i=i+rs.getDouble(1);
             }
-            return i;
+            return Format.decimal(i);
         } catch (SQLException ex) {
             ex.printStackTrace();
             return 0;
@@ -280,7 +281,7 @@ public class VendaDAO {
                 pago=pago+rs.getDouble(2);
             }
             aberto=tot-pago;
-            return aberto;
+            return Format.decimal(aberto);
         } catch (SQLException ex) {
             System.out.println("Erro: "+ex);
             return 0;

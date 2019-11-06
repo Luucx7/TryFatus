@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +20,8 @@ import java.util.logging.Logger;
 import model.Cliente;
 import util.DateConvert;
 import util.JurosCalc;
+
+import static util.Format.decimal;
 
 /**
  *
@@ -50,7 +53,7 @@ public class JurosDAO {
                                                                                                                   // pegarJuros retorna o juro salvo no sistema
                 }
             }
-            return juros; // retorna enfim o valor total
+            return decimal(juros); // retorna enfim o valor total
         } catch (SQLException ex) {
             ex.printStackTrace(); // Retorna erros ao console
         }

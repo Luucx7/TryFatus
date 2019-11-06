@@ -455,10 +455,10 @@ public class Pagamento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBpagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBpagamentoActionPerformed
-        if (jTparcelasPgmnto.getText().isEmpty() || jFTvencimento.getText().isEmpty() || jTvalorPgmnto.getText().isEmpty()) {
+        if (jTparcelasPgmnto.getText().isEmpty() || jFTvencimento.getText().equals("  /  /    ") || jTvalorPgmnto.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Quantia de parcelas, valor e vencimento não podem estar vazios!");
         } else {
-            VendaDAO.updateVendas((Double.parseDouble(jTvalorPgmnto.getText())), Main.cliente, Integer.parseInt(jTparcelasPgmnto.getText()), DateChecker.DateChecker(jFTvencimento.getText()), jCBJuros.isSelected(), jCBTodas.isSelected());
+            VendaDAO.updateVendas(Double.parseDouble(jTvalorPgmnto.getText()), Main.cliente, Integer.parseInt(jTparcelasPgmnto.getText()), DateChecker.DateChecker(jFTvencimento.getText()), jCBJuros.isSelected(), jCBTodas.isSelected());
             JOptionPane.showMessageDialog(null, "Pagamento confirmado!");
             jTparcelasPgmnto.setText("");
             jTvalorPgmnto.setText("0.00");
