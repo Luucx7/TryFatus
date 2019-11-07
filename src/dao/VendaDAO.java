@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 import model.Cliente;
 import model.Venda;
 import util.DateConvert;
-import util.Format;
+import static util.Format.decimal;
 import util.JurosCalc;
 
 /**
@@ -62,7 +62,7 @@ public class VendaDAO {
             if (cobrarJuros==true) {
               valorTot=valorTot+valJuros;
             } 
-            stmt.setDouble(1, valorTot);
+            stmt.setDouble(1, decimal(valorTot));
             
             //
             double valPag = 0;
@@ -82,7 +82,7 @@ public class VendaDAO {
             } else {
                 valPag=valorPago;
             }
-            stmt.setDouble(2, valPag);
+            stmt.setDouble(2, decimal(valPag));
             
             //
             if (pagoAgora>0 || attTodas==true) {
@@ -144,7 +144,7 @@ public class VendaDAO {
                         if (par<1) {
                             par=1;
                         }
-                        updateVencimento(rs.getInt("idVenda"), novoVencimento, par, rs.getDouble("valorTotal")+valJuros);
+                        updateVencimento(rs.getInt("idVenda"), novoVencimento, par, decimal(rs.getDouble("valorTotal")+valJuros));
                     }
                 } else {
                     break;
@@ -166,7 +166,7 @@ public class VendaDAO {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setDate(1, dataVencimento);
             stmt.setInt(2, parcelas);
-            stmt.setDouble(3, juros);
+            stmt.setDouble(3, decimal(juros));
             stmt.setInt(4, idVenda);
             stmt.executeUpdate();
             stmt.close();
@@ -226,7 +226,7 @@ public class VendaDAO {
                     i=i+(rs.getDouble(1)-rs.getDouble(2));
                 }
             }
-            return Format.decimal(i);
+            return decimal(i);
         } catch (SQLException ex) {
             ex.printStackTrace();
             return 0;
@@ -243,7 +243,7 @@ public class VendaDAO {
             while (rs.next()) {
                 i=i+rs.getDouble(1);
             }
-            return Format.decimal(i);
+            return decimal(i);
         } catch (SQLException ex) {
             ex.printStackTrace();
             return 0;
@@ -281,7 +281,7 @@ public class VendaDAO {
                 pago=pago+rs.getDouble(2);
             }
             aberto=tot-pago;
-            return Format.decimal(aberto);
+            return decimal(aberto);
         } catch (SQLException ex) {
             System.out.println("Erro: "+ex);
             return 0;

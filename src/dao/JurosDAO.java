@@ -10,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,7 +68,7 @@ public class JurosDAO {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 taxa=rs.getDouble(1);
-                return taxa;
+                return decimal(taxa);
             }
         } catch (SQLException ex) {
             System.out.println("Erro: "+ex);
@@ -80,7 +79,7 @@ public class JurosDAO {
                 Logger.getLogger(JurosDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return taxa;
+        return decimal(taxa);
     }
     
     public static void setarJuros(double juros) {
@@ -89,6 +88,7 @@ public class JurosDAO {
             PreparedStatement stmt = ConnectionFactory.getConnection().prepareStatement(sql);
             stmt.setDouble(1, juros);
             stmt.executeUpdate();
+            stmt.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -103,6 +103,7 @@ public class JurosDAO {
             if (rs.next()==false) {
                 setarJurosInicial();
             }
+            stmt.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
