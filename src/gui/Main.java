@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
 import model.Cliente;
 import util.AutoCompletion;
 import static util.DateConvert.DateConvert;
-import static util.Format.decimal;
 
 /**
  *
@@ -68,7 +67,7 @@ public class Main extends javax.swing.JFrame {
         jLcliente = new javax.swing.JLabel();
         jBpesquisar = new javax.swing.JButton();
         jBcadastrar = new javax.swing.JButton();
-        jCBcliente = new javax.swing.JComboBox<String>();
+        jCBcliente = new javax.swing.JComboBox<>();
         jPnCliente = new javax.swing.JPanel();
         jLnomeF = new javax.swing.JLabel();
         jLcpfF = new javax.swing.JLabel();
@@ -480,7 +479,7 @@ public class Main extends javax.swing.JFrame {
         jPnResumoLayout.setHorizontalGroup(
             jPnResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPnResumoLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(72, 72, 72)
                 .addComponent(jLtotalC)
                 .addGap(7, 7, 7)
                 .addComponent(jLtotalCQntd)
@@ -504,12 +503,12 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPnResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPnResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLfechadas)
+                        .addComponent(jLabertasQntd)
+                        .addComponent(jLjurosTot)
+                        .addComponent(jLjurosTotValor))
+                    .addGroup(jPnResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLemAberto)
-                        .addGroup(jPnResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLfechadas)
-                            .addComponent(jLabertasQntd)
-                            .addComponent(jLjurosTot)
-                            .addComponent(jLjurosTotValor))
                         .addComponent(jLemAbertoQntd))
                     .addGroup(jPnResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLtotalC)

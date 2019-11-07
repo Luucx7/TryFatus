@@ -11,7 +11,6 @@ import java.awt.Font;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
-import util.ativaManager;
 /**
  *
  * @author USER

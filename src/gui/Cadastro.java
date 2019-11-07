@@ -11,7 +11,6 @@ import static util.DateChecker.DateChecker;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JOptionPane;
-import util.AutoCompletion;
 /**
  *
  * @author USER

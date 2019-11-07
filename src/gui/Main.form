@@ -731,7 +731,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                       <Component id="jLtotalC" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Component id="jLtotalCQntd" min="-2" max="-2" attributes="0"/>
@@ -756,14 +756,14 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="jLfechadas" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabertasQntd" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLjurosTot" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLjurosTotValor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLemAberto" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
-                                  <Component id="jLfechadas" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabertasQntd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLjurosTot" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLjurosTotValor" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
                               <Component id="jLemAbertoQntd" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="3" attributes="0">
