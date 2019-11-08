@@ -8,8 +8,13 @@ package gui;
 import dao.VendaDAO;
 import java.awt.Color;
 import java.awt.Font;
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 /**
  *
@@ -21,6 +26,11 @@ public class Vendas extends javax.swing.JFrame {
      * Creates new form Cadastro
      */
     public Vendas() {
+        try {
+            this.setIconImage(ImageIO.read(new File("img/venda.png")));
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
         jTcpf.setText(Main.cliente.getCPF());
         jTnome.setText(Main.cliente.getNome());

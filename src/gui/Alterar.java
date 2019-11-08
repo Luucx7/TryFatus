@@ -10,6 +10,11 @@ import model.Cliente;
 import static util.DateChecker.DateChecker;
 import java.awt.Color;
 import java.awt.Font;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 /**
  *
@@ -22,6 +27,11 @@ public class Alterar extends javax.swing.JFrame {
      * Creates new form Cadastro
      */
     public Alterar() {
+        try {
+            this.setIconImage(ImageIO.read(new File("img/alterar.png")));
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
         Cliente cliente = new Cliente();
         cliente = main.cliente;

@@ -9,6 +9,11 @@ import dao.ClienteDAO;
 import dao.JurosDAO;
 import dao.VendaDAO;
 import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import model.Cliente;
 import util.AutoCompletion;
@@ -25,6 +30,11 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
+        try {
+            this.setIconImage(ImageIO.read(new File("img/icon.png")));
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
         jLnome.setVisible(false);
         jLcelular.setVisible(false);

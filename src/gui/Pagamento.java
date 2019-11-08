@@ -9,6 +9,11 @@ import dao.JurosDAO;
 import dao.VendaDAO;
 import java.awt.Color;
 import java.awt.Font;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import util.DateChecker;
 /**
@@ -21,6 +26,11 @@ public class Pagamento extends javax.swing.JFrame {
      * Creates new form Cadastro
      */
     public Pagamento() {
+        try {
+            this.setIconImage(ImageIO.read(new File("img/pagamento.png")));
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
         jTcpf.setText(Main.cliente.getCPF());
         jTnome.setText(Main.cliente.getNome());
