@@ -565,11 +565,6 @@ public class Main extends javax.swing.JFrame {
                 jMiJurosMouseClicked(evt);
             }
         });
-        jMiJuros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMiJurosActionPerformed(evt);
-            }
-        });
         jMadmin.add(jMiJuros);
 
         jMbBarra.add(jMadmin);
@@ -656,10 +651,6 @@ public class Main extends javax.swing.JFrame {
         Pagamento pagto = new Pagamento();
         pagto.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jMiJurosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMiJurosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMiJurosActionPerformed
 
     private void jMiJurosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMiJurosMouseClicked
         // TODO add your handling code here:
