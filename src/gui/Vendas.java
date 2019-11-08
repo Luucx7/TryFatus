@@ -160,16 +160,6 @@ public class Vendas extends javax.swing.JFrame {
         jTvalor.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTvalor.setBackground(new Color(69,73,74));
         jTvalor.setForeground(new Color(187, 187, 187));
-        jTvalor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTvalorActionPerformed(evt);
-            }
-        });
-        jTvalor.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jTvalorPropertyChange(evt);
-            }
-        });
 
         jLproduto.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLproduto.setForeground(new Color(187,187,187));
@@ -431,16 +421,6 @@ public class Vendas extends javax.swing.JFrame {
             jTvencimento.setEnabled(true);
         }
     }//GEN-LAST:event_jCbMetodoActionPerformed
-
-    private void jTvalorPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTvalorPropertyChange
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jTvalorPropertyChange
-
-    private void jTvalorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTvalorActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jTvalorActionPerformed
     
     /**
      * @param args the command line arguments
