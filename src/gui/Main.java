@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import model.Cliente;
 import util.AutoCompletion;
 import static util.DateConvert.DateConvert;
+import util.ValidaCPF;
 
 /**
  *
@@ -56,11 +57,13 @@ public class Main extends javax.swing.JFrame {
         JurosDAO.checarJuros();
         
         // Campo de Busca
-        ClienteDAO.ClienteBusca(jCBcliente);
+        //ClienteDAO.ClienteBusca(jCBcliente);
+        //AutoCompletion.enable(jCBcliente);
         AtualizarBusca();
     }
 
     public void AtualizarBusca() {
+        ClienteDAO.ClienteBusca(jCBcliente);
         AutoCompletion.enable(jCBcliente);
     }
     /**
@@ -106,7 +109,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabela = new javax.swing.JTable();
         jBvenda = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jBpagamento = new javax.swing.JButton();
         jPnResumo = new javax.swing.JPanel();
         jLtotalC = new javax.swing.JLabel();
         jLemAberto = new javax.swing.JLabel();
@@ -413,11 +416,11 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Registrar Pagamento");
-        jButton2.setEnabled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jBpagamento.setText("Registrar Pagamento");
+        jBpagamento.setEnabled(false);
+        jBpagamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jBpagamentoActionPerformed(evt);
             }
         });
 
@@ -433,7 +436,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(132, 132, 132)
                 .addComponent(jBvenda)
                 .addGap(161, 161, 161)
-                .addComponent(jButton2)
+                .addComponent(jBpagamento)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPnVendasLayout.setVerticalGroup(
@@ -442,7 +445,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(jPnVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBvenda)
-                    .addComponent(jButton2))
+                    .addComponent(jBpagamento))
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -607,7 +610,7 @@ public class Main extends javax.swing.JFrame {
         
         jLnome.setText(cliente.getNome());
         jLcelular.setText(cliente.getCelular());
-        jLcpf.setText(cliente.getCPF());
+        jLcpf.setText(ValidaCPF.imprimeCPF(cliente.getCPF()));
         jLrg.setText(cliente.getRG());
         jLtelefone.setText(cliente.getTelefone());
         jLemail.setText(cliente.getEmail());
@@ -631,13 +634,14 @@ public class Main extends javax.swing.JFrame {
         jBalterar.setEnabled(true);
         
         jBvenda.setEnabled(true);
-        jButton2.setEnabled(true);
+        jBpagamento.setEnabled(true);
         VendaDAO.PopularJTable("SELECT * FROM vendas WHERE Clientes_CPF='"+cliente.getCPF()+"'", Tabela);
         //
         jLemAbertoQntd.setText(VendaDAO.pegarValorAberto(cliente)+"");
         jLtotalCQntd.setText(VendaDAO.pegarTotal(cliente)+"");
         jLabertasQntd.setText(VendaDAO.pegarAbertos(cliente)+"");
         jLjurosTotValor.setText(JurosDAO.calcularJurosTotal(cliente)+"");
+        AtualizarBusca();
     }//GEN-LAST:event_jBpesquisarActionPerformed
 
     private void jBvendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBvendaActionPerformed
@@ -646,11 +650,11 @@ public class Main extends javax.swing.JFrame {
         venda.setVisible(true);
     }//GEN-LAST:event_jBvendaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jBpagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBpagamentoActionPerformed
         // TODO add your handling code here:
         Pagamento pagto = new Pagamento();
         pagto.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jBpagamentoActionPerformed
 
     private void jMiJurosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMiJurosMouseClicked
         // TODO add your handling code here:
@@ -696,8 +700,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable Tabela;
     private javax.swing.JButton jBalterar;
     private javax.swing.JButton jBcadastrar;
+    private javax.swing.JButton jBpagamento;
     private javax.swing.JButton jBpesquisar;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jBvenda;
     private javax.swing.JComboBox<String> jCBcliente;
     private javax.swing.JLabel jLabertasQntd;

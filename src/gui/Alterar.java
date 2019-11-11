@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
+import util.ValidaCPF;
 /**
  *
  * @author USER
@@ -36,7 +37,7 @@ public class Alterar extends javax.swing.JFrame {
         Cliente cliente = new Cliente();
         cliente = main.cliente;
         jTnome.setText(cliente.getNome());
-        jTcpf.setText(cliente.getCPF());
+        jTcpf.setText(ValidaCPF.imprimeCPF(cliente.getCPF()));
         jTrg.setText(cliente.getRG());
         jTtelefone.setText(cliente.getTelefone());
         jTcelular.setText(cliente.getCelular());
@@ -413,7 +414,7 @@ public class Alterar extends javax.swing.JFrame {
             Cliente cliente = new Cliente();
             ClienteDAO dao = new ClienteDAO();
             cliente.setNome(jTnome.getText());
-            cliente.setCPF(jTcpf.getText());
+            cliente.setCPF(cliente.getCPF());
             cliente.setRG(jTrg.getText());
             cliente.setCelular(jTcelular.getText());
             cliente.setTelefone(jTtelefone.getText());

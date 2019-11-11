@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import util.DateChecker;
+import util.ValidaCPF;
 /**
  *
  * @author USER
@@ -32,7 +33,7 @@ public class Pagamento extends javax.swing.JFrame {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         initComponents();
-        jTcpf.setText(Main.cliente.getCPF());
+        jTcpf.setText(ValidaCPF.imprimeCPF(Main.cliente.getCPF()));
         jTnome.setText(Main.cliente.getNome());
         jTrg.setText(Main.cliente.getRG());
         jTemAberto.setText(VendaDAO.pegarAbertos(Main.cliente)+"");
@@ -86,7 +87,7 @@ public class Pagamento extends javax.swing.JFrame {
         jCBTodas = new javax.swing.JCheckBox();
         jBpagamento = new javax.swing.JButton();
 
-        setTitle("Registro de Vendas");
+        setTitle("Registro de Pagamentos");
 
         jPnPrincipal.setBackground(new java.awt.Color(56, 56, 56));
 

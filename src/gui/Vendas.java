@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
+import util.ValidaCPF;
 /**
  *
  * @author USER
@@ -32,7 +33,7 @@ public class Vendas extends javax.swing.JFrame {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         initComponents();
-        jTcpf.setText(Main.cliente.getCPF());
+        jTcpf.setText(ValidaCPF.imprimeCPF(Main.cliente.getCPF()));
         jTnome.setText(Main.cliente.getNome());
         jTrg.setText(Main.cliente.getRG());
     }

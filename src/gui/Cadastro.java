@@ -8,6 +8,7 @@ package gui;
 import dao.ClienteDAO;
 import model.Cliente;
 import static util.DateChecker.DateChecker;
+import static util.ValidaCPF.isCPF;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
@@ -389,9 +390,9 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void jBcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcadastrarActionPerformed
         // TODO add your handling code here:
-        if (jTnome.getText().isEmpty() || jTcpf.getText().isEmpty() || jTrg.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Nome, CPF e RG não podem estar vazios!", "Inane warning", JOptionPane.WARNING_MESSAGE);
-        } else {
+        if (jTnome.getText().isEmpty() || jTcpf.getText().isEmpty() || jTrg.getText().isEmpty() || jFTnascimento.getText().equals("  /  /    ")) {
+            JOptionPane.showMessageDialog(null, "Nome, CPF, RG e Nascimento não podem estar vazios!", "Inane warning", JOptionPane.WARNING_MESSAGE);
+        } else if (isCPF(jTcpf.getText())!=false){
             Cliente cliente = new Cliente();
             ClienteDAO dao = new ClienteDAO();
             cliente.setNome(jTnome.getText());
@@ -420,6 +421,10 @@ public class Cadastro extends javax.swing.JFrame {
             jTendereco.setText("");
             jFTnascimento.setText("");
             JOptionPane.showMessageDialog(null, "Cliente cadastrado!");
+            Main main = new Main();
+            main.AtualizarBusca();
+        } else {
+            JOptionPane.showMessageDialog(null, "CPF inválido!");
         }
     }//GEN-LAST:event_jBcadastrarActionPerformed
 
