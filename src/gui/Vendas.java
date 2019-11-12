@@ -240,6 +240,7 @@ public class Vendas extends javax.swing.JFrame {
         jLvalorP.setForeground(new Color(187,187,187));
 
         jTvalorP.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTvalorP.setText("0");
         jTvalorP.setEnabled(false);
         jTvalorP.setBackground(new Color(69,73,74));
         jTvalorP.setForeground(new Color(187, 187, 187));

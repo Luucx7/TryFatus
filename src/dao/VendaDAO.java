@@ -71,11 +71,11 @@ public class VendaDAO {
                     valPag=valorTot;
                     pagAgora=pagAgora-valorTot;
                 }
-                if (pagAgora==valorTot) {
+                else if (pagAgora==valorTot) {
                     valPag=valorTot;
                     pagAgora=0;
                 }
-                if (pagAgora<valorTot) {
+                else if (pagAgora<valorTot) {
                     valPag=valorPago+pagAgora;
                     pagAgora=0;
                 }

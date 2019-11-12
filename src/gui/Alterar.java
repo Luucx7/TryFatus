@@ -413,7 +413,10 @@ public class Alterar extends javax.swing.JFrame {
         } else {
             Cliente cliente = new Cliente();
             ClienteDAO dao = new ClienteDAO();
+            cliente = main.cliente;
+            
             cliente.setNome(jTnome.getText());
+            System.out.println(cliente.getCPF());
             cliente.setCPF(cliente.getCPF());
             cliente.setRG(jTrg.getText());
             cliente.setCelular(jTcelular.getText());

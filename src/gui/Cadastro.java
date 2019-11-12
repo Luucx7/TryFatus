@@ -421,8 +421,6 @@ public class Cadastro extends javax.swing.JFrame {
             jTendereco.setText("");
             jFTnascimento.setText("");
             JOptionPane.showMessageDialog(null, "Cliente cadastrado!");
-            Main main = new Main();
-            main.AtualizarBusca();
         } else {
             JOptionPane.showMessageDialog(null, "CPF inválido!");
         }

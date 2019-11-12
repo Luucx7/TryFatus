@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import model.Cliente;
 import util.AutoCompletion;
@@ -66,6 +67,7 @@ public class Main extends javax.swing.JFrame {
         ClienteDAO.ClienteBusca(jCBcliente);
         AutoCompletion.enable(jCBcliente);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -641,7 +643,6 @@ public class Main extends javax.swing.JFrame {
         jLtotalCQntd.setText(VendaDAO.pegarTotal(cliente)+"");
         jLabertasQntd.setText(VendaDAO.pegarAbertos(cliente)+"");
         jLjurosTotValor.setText(JurosDAO.calcularJurosTotal(cliente)+"");
-        AtualizarBusca();
     }//GEN-LAST:event_jBpesquisarActionPerformed
 
     private void jBvendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBvendaActionPerformed

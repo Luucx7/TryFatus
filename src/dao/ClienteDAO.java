@@ -121,6 +121,7 @@ public class ClienteDAO {
         
         try {
             try (PreparedStatement stmt = connection.prepareStatement("Update clientes Set Nome = ?, RG=?, Celular = ?, Telefone = ?, Email = ?, Endereco = ?, Bairro=?, Cidade=?, Estado=?, Nascimento = ? where CPF = ?");) {
+                System.err.println(cliente.getCPF());
                 stmt.setString(1, cliente.getNome());
                 stmt.setString(2, cliente.getRG());
                 stmt.setString(3, cliente.getCelular());
@@ -133,7 +134,7 @@ public class ClienteDAO {
                 stmt.setDate(10, cliente.getNascimento());
                 stmt.setString(11, cliente.getCPF());
                 stmt.executeUpdate();
-                stmt.close();
+                //stmt.close();
             } catch (SQLException ex) {
                 Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
