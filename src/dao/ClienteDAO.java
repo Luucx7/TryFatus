@@ -18,7 +18,7 @@ import javax.swing.JComboBox;
 
 /**
  *
- * @author lukin
+ * @author Luucx7
  */
 public class ClienteDAO {
     
@@ -134,7 +134,6 @@ public class ClienteDAO {
                 stmt.setDate(10, cliente.getNascimento());
                 stmt.setString(11, cliente.getCPF());
                 stmt.executeUpdate();
-                //stmt.close();
             } catch (SQLException ex) {
                 Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
             }

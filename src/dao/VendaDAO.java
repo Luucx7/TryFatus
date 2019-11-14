@@ -26,7 +26,7 @@ import util.JurosCalc;
 
 /**
  *
- * @author USER
+ * @author Luucx7
  */
 public class VendaDAO {
     
@@ -110,11 +110,9 @@ public class VendaDAO {
             //
             stmt.setInt(6, idVenda);
             stmt.executeUpdate();
-            //return pagAgora;
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        //return 0;
     }
     public static void updateVendas(double valorPago, Cliente cliente, int parcelasPagas, java.sql.Date novoVencimento, boolean cobrarJuros, boolean attTodas) {
         String sql = "SELECT idVenda,valorTotal,valorPago,quantiaParcelas,dataVencimento FROM tryfatus.vendas WHERE Clientes_CPF='"+cliente.getCPF()+"' AND ativa=1 ORDER BY dataVencimento";
@@ -157,7 +155,6 @@ public class VendaDAO {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        //return list;
     }
     
     public static void updateVencimento(int idVenda, java.sql.Date dataVencimento, int parcelas, double juros) {
