@@ -149,7 +149,7 @@ public class VendaDAO {
                 }
             }
             if (a>0) {
-                JOptionPane.showMessageDialog(null, "Sobraram "+a+"R$ de troco!");
+                JOptionPane.showMessageDialog(null, "Sobraram "+decimal(a)+"R$ de troco!");
             }
             stmt.close();
         } catch (SQLException ex) {
