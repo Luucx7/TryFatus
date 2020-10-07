@@ -1,5 +1,4 @@
 # TryFatus
-Protótipo de gerenciamento de clientes e vendas baseado em Caso de Uso para a loja TryFatus, localizada em Imbituba, Santa Catarina.
 
 **Trabalho de conclusão de curso da escola E.E.M. Annes Gualberto**
 
